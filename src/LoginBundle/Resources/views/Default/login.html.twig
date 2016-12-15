@@ -1,0 +1,33 @@
+{%extends "LoginBundle:Default:index.html.twig" %}
+
+{%block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-5 col-md-3">
+                <div class="form-login">
+                <h4>Welcome back.</h4>
+                {% if error is defined%}
+                    <div class="alert-info fade in">
+                        <div>{{ error }}</div>
+                    </div>
+                {%endif%}
+                    <form method="POST" action="{{path('login_homepage')}}">
+                        <input type="text" id="userName" name="username" class="form-control input-sm chat-input" placeholder="username" />
+                        </br>
+                        <input type="password" id="userPassword" name="password" class="form-control input-sm chat-input" placeholder="password" />
+                        </br>
+                        <div class="wrapper">
+                            <span class="group-btn">     
+                                <button  type="submit" class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}
+
+
+
+
